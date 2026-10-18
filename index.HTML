@@ -1,0 +1,614 @@
+
+<html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uber | The Gig Economy</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7f5;
+    color: #202820;
+    line-height: 1.7;
+}
+
+header {
+    background: #080b09;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #a4f576;
+}
+
+nav {
+    background: #080b09;
+    padding: 12px;
+    text-align: center;
+    border-top: 1px solid #303630;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: #a4f576;
+}
+
+.hero {
+    background: #101612;
+    color: white;
+    padding: 65px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 35px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.1;
+    margin: 18px 0;
+}
+
+.hero h1 span {
+    color: #a4f576;
+}
+
+.hero p {
+    color: #d0d8d1;
+    margin-bottom: 24px;
+}
+
+.hero img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.tag {
+    color: #a4f576;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    background: #a4f576;
+    color: #101610;
+    padding: 12px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: white;
+}
+
+main {
+    max-width: 1150px;
+    margin: auto;
+    padding: 35px 22px;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.heading {
+    margin-bottom: 25px;
+}
+
+.heading h2 {
+    font-size: 32px;
+    margin: 8px 0;
+}
+
+.heading p {
+    color: #626b63;
+}
+
+section {
+    margin-bottom: 35px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e5e9e5;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 20px #14201408;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.feature {
+    background: #101612;
+    color: white;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.feature .number {
+    font-size: 35px;
+    color: #a4f576;
+    font-weight: bold;
+}
+
+.feature p {
+    color: #d0d8d1;
+}
+
+h2, h3 {
+    color: #18251b;
+}
+
+.feature h3 {
+    color: white;
+}
+
+.photo {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+ul, ol {
+    padding-left: 22px;
+    margin-top: 10px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e1e6e1;
+}
+
+th {
+    background: #101612;
+    color: #a4f576;
+}
+
+tr:hover td {
+    background: #f0f8ed;
+}
+
+a {
+    color: #23763b;
+}
+
+nav a {
+    color: white;
+}
+
+.notice {
+    background: #edfae8;
+    padding: 18px;
+    border-left: 5px solid #70bd4d;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+footer {
+    background: #080b09;
+    color: #d0d8d1;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+footer strong {
+    color: #a4f576;
+}
+
+@media (max-width: 750px) {
+    .hero, .two-column {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 40px 7%;
+    }
+
+    .hero img {
+        height: 240px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        justify-content: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+
+    .heading h2 {
+        font-size: 26px;
+    }
+
+    th, td {
+        padding: 9px;
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">UBER<span>.</span></div>
+    <div>THE GIG ECONOMY | CAT PAT 2026</div>
+</header>
+
+<nav>
+    <a href="#home" onclick="showPage('home');return false;">HOME</a>
+    <a href="#research" onclick="showPage('research');return false;">RESEARCH</a>
+    <a href="#career" onclick="showPage('career');return false;">CAREER GUIDE</a>
+</nav>
+
+<!-- HOME PAGE -->
+
+<div id="home" class="page active">
+
+<div class="hero">
+    <div>
+        <p class="tag">Understanding the future of work</p>
+        <h1>Driving the <span>digital</span> economy.</h1>
+        <p>Discover how Uber connects technology, transportation and employment in South Africa's gig economy.</p>
+        <a href="#research" class="btn" onclick="showPage('research');return false;">Explore the research →</a>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1000&q=85"
+         alt="Driver behind the wheel of a car">
+</div>
+
+<main>
+
+<section class="heading">
+    <p class="tag">01 / Introduction</p>
+    <h2>What is the gig economy?</h2>
+    <p>The gig economy allows people to earn money through individual jobs, short-term work and digital platforms instead of relying only on permanent employment.</p>
+</section>
+
+<section class="two-column">
+    <div class="card">
+        <h3>Our topic</h3>
+        <p><strong>The gig economy and Uber driving in South Africa.</strong></p>
+        <p>This website investigates how Uber works, the opportunities it offers, and the resources needed to become a driver.</p>
+    </div>
+
+    <div class="card">
+        <h3>Focus question</h3>
+        <p>How does Uber create work opportunities, and what digital skills, devices and requirements are needed to become an Uber driver?</p>
+    </div>
+</section>
+
+<section class="heading">
+    <p class="tag">02 / Abstract</p>
+    <h2>What did the investigation discover?</h2>
+    <div class="card">
+        <p>This investigation examines Uber as an example of the gig economy. It explores how the platform connects passengers with drivers and considers the benefits, challenges and requirements of app-based driving. The research highlights the importance of smartphones, internet access, navigation and customer service. Although Uber may offer flexible working arrangements, earnings are not guaranteed and drivers must consider fuel, maintenance and other expenses. The investigation concludes that potential drivers should research local requirements, calculate costs and understand safety responsibilities before joining the platform.</p>
+    </div>
+</section>
+
+<section>
+    <div class="grid">
+        <div class="feature">
+            <div class="number">01</div>
+            <h3>Technology</h3>
+            <p>A mobile application connects riders and drivers.</p>
+        </div>
+
+        <div class="feature">
+            <div class="number">02</div>
+            <h3>Opportunity</h3>
+            <p>Eligible drivers can complete trips through the platform.</p>
+        </div>
+
+        <div class="feature">
+            <div class="number">03</div>
+            <h3>Responsibility</h3>
+            <p>Drivers must manage expenses and prioritise road safety.</p>
+        </div>
+    </div>
+</section>
+
+<section class="card">
+    <h2>Explore the website</h2>
+    <p>Learn about the findings or discover the steps and resources involved in becoming an Uber driver.</p>
+    <br>
+    <a href="#research" class="btn" onclick="showPage('research');return false;">View research</a>
+    &nbsp;
+    <a href="#career" class="btn" onclick="showPage('career');return false;">Career guide</a>
+</section>
+
+</main>
+</div>
+
+<!-- RESEARCH PAGE -->
+
+<div id="research" class="page">
+
+<div class="hero">
+    <div>
+        <p class="tag">Research and findings</p>
+        <h1>Understanding <span>Uber.</span></h1>
+        <p>Exploring the opportunities, challenges and technology behind app-based transport.</p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1000&q=85"
+         alt="Modern car parked outdoors">
+</div>
+
+<main>
+
+<section class="heading">
+    <p class="tag">03 / Findings</p>
+    <h2>What did the research show?</h2>
+</section>
+
+<section class="grid">
+    <div class="card">
+        <img class="photo" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="Person using digital technology">
+        <h3>Technology creates opportunities</h3>
+        <p>Uber uses an app to connect riders with drivers and help organise trips.</p>
+        <p><a href="https://www.uber.com/za/en/" target="_blank" rel="noopener noreferrer">Source: Uber South Africa</a></p>
+    </div>
+
+    <div class="card">
+        <img class="photo" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=600&q=80" alt="Modern workspace representing flexible work">
+        <h3>Flexibility has limits</h3>
+        <p>Working arrangements may be flexible, but demand and earnings can change.</p>
+        <p><a href="https://www.ilo.org/" target="_blank" rel="noopener noreferrer">Source: ILO</a></p>
+    </div>
+
+    <div class="card">
+        <img class="photo" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" alt="People discussing work and planning">
+        <h3>Skills are important</h3>
+        <p>Drivers need navigation skills, digital literacy and professional communication.</p>
+        <p><a href="https://www.uber.com/za/en/drive/" target="_blank" rel="noopener noreferrer">Source: Uber Driver</a></p>
+    </div>
+</section>
+
+<section>
+    <h2>Advantages and disadvantages</h2>
+    <table>
+        <tr>
+            <th>Advantages</th>
+            <th>Disadvantages</th>
+        </tr>
+        <tr>
+            <td>Potentially flexible working hours</td>
+            <td>Income is not guaranteed</td>
+        </tr>
+        <tr>
+            <td>Digital access to trip requests</td>
+            <td>Fuel and vehicle maintenance costs</td>
+        </tr>
+        <tr>
+            <td>Opportunity to earn from completed trips</td>
+            <td>Traffic and road safety risks</td>
+        </tr>
+        <tr>
+            <td>Use of technology and navigation</td>
+            <td>Dependence on a working phone and internet</td>
+        </tr>
+    </table>
+</section>
+
+<section class="card">
+    <h2>Research summary</h2>
+    <p>The investigation identified four key findings:</p>
+    <ol>
+        <li>Digital platforms connect customers and service providers.</li>
+        <li>Flexible work does not guarantee regular earnings.</li>
+        <li>Vehicle expenses affect the money a driver keeps.</li>
+        <li>Digital skills, legal compliance and safety are essential.</li>
+    </ol>
+
+    <div class="notice">
+        <strong>Research note:</strong> These are qualitative findings, not survey statistics. Add verified figures from your own investigation if you collected numerical data.
+    </div>
+</section>
+
+<section class="card">
+    <h2>My recommendation</h2>
+    <p>Anyone considering Uber driving should compare expected earnings with fuel, maintenance, insurance and other costs. They should also confirm the current requirements for their area before registering.</p>
+    <p><a href="https://www.uber.com/za/en/drive/" target="_blank" rel="noopener noreferrer">Official Uber driver information →</a></p>
+</section>
+
+</main>
+</div>
+
+<!-- CAREER GUIDE PAGE -->
+
+<div id="career" class="page">
+
+<div class="hero">
+    <div>
+        <p class="tag">Career opportunities</p>
+        <h1>Become an <span>Uber driver.</span></h1>
+        <p>Discover the equipment, digital skills and preparation required for app-based driving.</p>
+        <a href="https://www.uber.com/za/en/drive/" target="_blank" rel="noopener noreferrer" class="btn">Official driver information →</a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85"
+         alt="Car representing vehicle-based work">
+</div>
+
+<main>
+
+<section class="heading">
+    <p class="tag">04 / Career guide</p>
+    <h2>What does an Uber driver do?</h2>
+    <p>An Uber driver transports passengers using the Uber platform. The driver receives trip requests, follows directions, obeys traffic laws and provides professional service.</p>
+</section>
+
+<section class="card">
+    <h2>How to get started</h2>
+
+    <div class="two-column">
+        <div>
+            <h3>Step 1 — Check requirements</h3>
+            <p>Read the local driver, vehicle and legal requirements.</p>
+        </div>
+        <div>
+            <h3>Step 2 — Prepare documents</h3>
+            <p>Gather the identification and driving documents requested for your location.</p>
+        </div>
+        <div>
+            <h3>Step 3 — Register</h3>
+            <p>Follow the official Uber driver registration process.</p>
+        </div>
+        <div>
+            <h3>Step 4 — Complete checks</h3>
+            <p>Submit the required documents and complete applicable verification.</p>
+        </div>
+        <div>
+            <h3>Step 5 — Prepare the vehicle</h3>
+            <p>Confirm that the vehicle meets the platform's current requirements.</p>
+        </div>
+        <div>
+            <h3>Step 6 — Start driving</h3>
+            <p>Follow Uber's instructions and prioritise safe, responsible driving.</p>
+        </div>
+    </div>
+
+    <div class="notice">
+        Requirements vary by location and can change. Registration does not guarantee approval or employment.
+    </div>
+</section>
+
+<section class="grid">
+    <div class="card">
+        <h3>Smartphone</h3>
+        <p>Runs the driver app and displays trip information.</p>
+    </div>
+    <div class="card">
+        <h3>Internet and GPS</h3>
+        <p>Provide trip updates, maps and navigation.</p>
+    </div>
+    <div class="card">
+        <h3>Suitable vehicle</h3>
+        <p>Must meet applicable platform and legal requirements.</p>
+    </div>
+</section>
+
+<section class="two-column">
+    <div class="card">
+        <h2>Digital skills</h2>
+        <ul>
+            <li>Using smartphone applications</li>
+            <li>Reading maps and GPS directions</li>
+            <li>Communicating with passengers</li>
+            <li>Understanding digital payments</li>
+            <li>Protecting personal information</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Safety responsibilities</h2>
+        <ul>
+            <li>Obey traffic laws</li>
+            <li>Keep the vehicle roadworthy</li>
+            <li>Protect account passwords</li>
+            <li>Avoid suspicious messages</li>
+            <li>Never handle a phone while driving</li>
+        </ul>
+    </div>
+</section>
+
+<section class="card">
+    <h2>Conclusion</h2>
+    <p>Uber demonstrates how technology can create opportunities in the gig economy. Driving may offer flexibility, but earnings vary and vehicle expenses can be high. A potential driver should understand the requirements, develop digital skills and plan carefully before starting.</p>
+</section>
+
+</main>
+</div>
+
+<footer>
+    <p><strong>UBER.</strong> | Grade 11 CAT PAT Phase 3</p>
+    <p>Educational website about the gig economy in South Africa.</p>
+    <p><a href="#home" onclick="showPage('home');return false;">Back to Home ↑</a></p>
+</footer>
+
+<script>
+function showPage(id) {
+    document.querySelectorAll(".page").forEach(function(page) {
+        page.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+    window.scrollTo(0, 0);
+}
+</script>
+
+</body>
+</html>
